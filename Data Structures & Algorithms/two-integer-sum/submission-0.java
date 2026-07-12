@@ -1,0 +1,24 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+
+   /*     //brute force taking n2 
+        for(int i=0;i<nums.length-1;i++){
+            for(int j=i+1;j<nums.length;j++){
+
+                if(nums[i]+nums[j]==target) return new int[] {i ,j} ; 
+            }
+        }
+        return new int[]{} ; 
+    */
+    HashMap<Integer , Integer> map = new HashMap<>() ; 
+
+    for(int i=0;i<nums.length;i++){
+        int tar = target - nums[i] ; 
+        if(map.containsKey(tar)){
+            return new int[] {map.get(tar) ,i } ; 
+        }
+        map.put(nums[i] ,i) ; 
+    }
+     return new int[]{} ; 
+    }
+}
